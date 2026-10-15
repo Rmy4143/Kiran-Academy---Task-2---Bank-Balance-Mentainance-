@@ -53,13 +53,13 @@ Account khali ho gaya
 4. Compile the program:
 
    ```bash
-   javac Task3.java
+   javac Task2.java
    ```
 
 5. Run the program:
 
    ```bash
-   java Task3
+   java Task2
    ```
 
 ## 🧪 Test Cases

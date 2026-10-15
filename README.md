@@ -48,7 +48,7 @@ Account khali ho gaya
 ## ▶️ How to Run
 
 1. Install the Java Development Kit (JDK).
-2. Save the source code in a file named `Task3.java`.
+2. Save the source code in a file named `Task2.java`.
 3. Open a terminal in the folder containing the file.
 4. Compile the program:
 

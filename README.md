@@ -1,25 +1,35 @@
-# 💳 Java Payment Validation System
+💳 Task 2: Java Payment Validation System
 
-## 📌 Overview
-This project is a simple Java program that simulates a basic payment validation system. It checks whether a payment amount is valid, whether the account has sufficient balance, and whether the payment leaves the account balance empty.
+📌 Overview
 
-## 🚀 Features
-- **Amount Validation:** Checks whether the payment amount is negative.
-- **Balance Verification:** Prevents payments that exceed the available balance.
-- **Payment Success:** Displays a success message when the payment is valid.
-- **Balance Check:** Notifies the user when the payment uses the entire balance.
+This project is a simple Java program that simulates a payment validation system. It accepts a payment amount from the user and checks whether the payment is valid based on the available account balance.
 
-## 🛠️ Technologies Used
-- **Programming Language:** Java
-- **Concepts:** Variables, data types, conditional statements (`if`, `else if`, `else`), nested conditions, and comparison operators.
+🚀 Features
 
-## 💻 Source Code
+- Accepts payment amount through user input.
+- Validates negative payment amounts.
+- Checks whether sufficient balance is available.
+- Displays payment success or failure messages.
+- Calculates the remaining balance.
+- Notifies the user when the account balance becomes zero.
 
-```java
-public class Task3 {
+🛠️ Technologies Used
+
+- Language: Java
+- Concepts: Scanner, variables, conditional statements, nested if-else, and arithmetic operators.
+
+💻 Source Code
+
+import java.util.Scanner;
+
+public class Task2 {
     public static void main(String[] args) {
-        int amount = 5000;
+        Scanner sc = new Scanner(System.in);
+
         int balance = 5000;
+
+        System.out.print("Enter payment amount: ");
+        int amount = sc.nextInt();
 
         if (amount < 0) {
             System.out.println("Amount negative");
@@ -29,57 +39,68 @@ public class Task3 {
         }
         else {
             System.out.println("Payment success");
+            balance = balance - amount;
 
-            if (amount == balance) {
+            if (balance == 0) {
                 System.out.println("Account khali ho gaya");
             }
+            else {
+                System.out.println("Remaining balance: " + balance);
+            }
         }
+
+        sc.close();
     }
 }
-```
 
-## 📤 Sample Output
+📤 Sample Output
 
-```text
+Example 1: Successful Payment
+
+Enter payment amount: 2000
+Payment success
+Remaining balance: 3000
+
+Example 2: Full Balance Used
+
+Enter payment amount: 5000
 Payment success
 Account khali ho gaya
-```
 
-## ▶️ How to Run
+Example 3: Insufficient Balance
+
+Enter payment amount: 6000
+Payment failed
+
+▶️ How to Run
 
 1. Install the Java Development Kit (JDK).
-2. Save the source code in a file named `Task2.java`.
-3. Open a terminal in the folder containing the file.
+
+2. Save the code as "Task2.java".
+
+3. Open a terminal in the project directory.
+
 4. Compile the program:
-
-   ```bash
+   
    javac Task2.java
-   ```
 
-5. Run the program:
-
-   ```bash
+5. Execute the program:
+   
    java Task2
-   ```
 
-## 🧪 Test Cases
+🎯 Learning Objectives
 
-| Amount | Balance | Expected Result |
-|---:|---:|---|
-| 5000 | 5000 | Payment success; account becomes empty |
-| 6000 | 5000 | Payment failed |
-| -100 | 5000 | Amount negative |
-| 2000 | 5000 | Payment success |
+- Understand user input using the "Scanner" class.
+- Implement "if", "else if", and "else" statements.
+- Perform arithmetic operations in Java.
+- Apply basic payment validation logic.
 
-## 🎯 Learning Objectives
-- Understand Java conditional statements.
-- Apply nested `if` statements.
-- Validate payment amounts against account balances.
-- Practice basic program logic and decision-making.
+👨‍💻 Author
 
-## 👨‍💻 Author
-**Bhagyesh Patil**
+Bhagyesh Patil
 
 ---
 
-⭐ If you find this project useful, consider giving the repository a star!
+⭐ This project is created for practicing Java fundamentals and conditional logic.
+
+Note: This is an educational program. The balance resets to ₹5,000 each time the program runs, and it does not process real payments.
